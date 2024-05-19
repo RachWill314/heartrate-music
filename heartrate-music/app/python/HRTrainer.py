@@ -1,4 +1,4 @@
-#EZ trainer : get HR data
+  #EZ trainer : get HR data
 import csv
 import pygame
 import gf2
@@ -68,7 +68,7 @@ start_hr_entry = tk.Entry(
 )
 start_hr_entry.pack()
 
-end_hr_lbl = tk.Label(root, text="Please enter starting heart rate").pack()
+end_hr_lbl = tk.Label(root, text="Please enter ending heart rate").pack()
 
 end_hr_entry = tk.Entry(
     fg="black",
@@ -76,6 +76,15 @@ end_hr_entry = tk.Entry(
     width=12
 )
 end_hr_entry.pack()
+
+end_hr_lbl = tk.Label(root, text="Please enter ending heart rate").pack()
+
+rest_hr_entry = tk.Entry(
+    fg="black",
+    bg="white",
+    width=12
+)
+rest_hr_entry.pack()
 
 hr_list = []
 
@@ -85,11 +94,13 @@ def calculate_and_save():
 
     start_hr = int (start_hr_entry.get())
     end_hr = int(end_hr_entry.get())
+    rest_hr= int(rest_hr_entry.get())
 
     difference = start_hr - end_hr
 
     hr_list.append(start_hr)
     hr_list.append(difference)
+    hr_list.append(rest_hr_entry) 
 
     print(hr_list)
 

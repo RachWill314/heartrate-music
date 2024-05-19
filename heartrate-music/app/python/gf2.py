@@ -2,13 +2,12 @@ import librosa
 import numpy as np
 
 #filename = 'audio.wav'
-#filename = librosa.example('nutcracker')
+filename = librosa.example('nutcracker')
 
 # Load the audio file
 #filename = 'nutcracker'
 
 def get_characteristics(filename):
-    global selected_filename
 
     # Load the audio file
     y, sr = librosa.load(filename)
@@ -79,4 +78,3 @@ def get_characteristics(filename):
 # Test the function
 characteristics = get_characteristics(filename)
 print(characteristics)
-print(type(filename))
